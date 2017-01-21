@@ -30,27 +30,27 @@ class WaveGeneratorBehavior extends Sup.Behavior {
     switch (this.lastWave)
     {
       case 1:
-        possibleWaves = [2,7,8]
+        possibleWaves = [2,1,7,8]
         waveNumber = this.chooseWave(possibleWaves)
         break;
       case 2:
-        possibleWaves = [1,7,8]
+        possibleWaves = [1,2,7,8]
         waveNumber = this.chooseWave(possibleWaves)
         break;
       case 3:
-        possibleWaves = [4,9,12]
+        possibleWaves = [4,3,9,12]
         waveNumber = this.chooseWave(possibleWaves)
         break;
       case 4:
-        possibleWaves = [3,9,12]
+        possibleWaves = [3,4,9,12]
         waveNumber = this.chooseWave(possibleWaves)
         break;
       case 5:
-        possibleWaves = [6,10,11]
+        possibleWaves = [6,5,10,11]
         waveNumber = this.chooseWave(possibleWaves)
         break;
       case 6:
-        possibleWaves = [5,10,11]
+        possibleWaves = [5,6,10,11]
         waveNumber = this.chooseWave(possibleWaves)
         break;
       case 7:

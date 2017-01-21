@@ -9,7 +9,6 @@ class BoatBehavior extends Sup.Behavior {
   
   
   awake() {
-    Sup.log(this.actor.getChild("HitBoxes"));
     this.hitBoxesActor = this.actor.getChild("HitBoxes").getChildren()
     this.frameCounter = 0;
     let boatX = this.actor.getLocalX()

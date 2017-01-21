@@ -58,6 +58,18 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "TempoBehavior": {
+      "scriptId": "27",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "RythmBorderBehavior": {
+      "scriptId": "31",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }

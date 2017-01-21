@@ -1,10 +1,22 @@
 {
-  "nextEntryId": 25,
+  "nextEntryId": 34,
   "nodes": [
     {
       "id": "0",
       "name": "GameScene",
       "type": "scene"
+    },
+    {
+      "id": "25",
+      "name": "Sounds",
+      "type": null,
+      "children": [
+        {
+          "id": "26",
+          "name": "DrumSound",
+          "type": "sound"
+        }
+      ]
     },
     {
       "id": "18",
@@ -14,6 +26,11 @@
         {
           "id": "23",
           "name": "WavePrefab",
+          "type": "scene"
+        },
+        {
+          "id": "30",
+          "name": "RythmBorder",
           "type": "scene"
         }
       ]
@@ -51,6 +68,11 @@
           "type": "script"
         },
         {
+          "id": "31",
+          "name": "RythmBorderBehavior",
+          "type": "script"
+        },
+        {
           "id": "15",
           "name": "HitBoxBehavior",
           "type": "script"
@@ -73,6 +95,11 @@
         {
           "id": "24",
           "name": "CameraBehavior",
+          "type": "script"
+        },
+        {
+          "id": "27",
+          "name": "TempoBehavior",
           "type": "script"
         }
       ]
@@ -125,6 +152,30 @@
             {
               "id": "12",
               "name": "HitBoxRed",
+              "type": "sprite"
+            }
+          ]
+        },
+        {
+          "id": "28",
+          "name": "Hud",
+          "type": null,
+          "children": [
+            {
+              "id": "29",
+              "name": "RythmBorder",
+              "type": "sprite"
+            }
+          ]
+        },
+        {
+          "id": "32",
+          "name": "Pirates",
+          "type": null,
+          "children": [
+            {
+              "id": "33",
+              "name": "Pirate",
               "type": "sprite"
             }
           ]
