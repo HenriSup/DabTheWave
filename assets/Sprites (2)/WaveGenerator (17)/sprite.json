@@ -6,27 +6,19 @@
   "filtering": "pixelated",
   "wrapping": "clampToEdge",
   "pixelsPerUnit": 1,
-  "framesPerSecond": 12,
+  "framesPerSecond": 10,
   "opacity": null,
   "alphaTest": 0.1,
   "frameOrder": "rows",
   "grid": {
-    "width": 1600,
-    "height": 1200
+    "width": 132,
+    "height": 132
   },
   "origin": {
     "x": 0.5,
     "y": 0.5
   },
-  "animations": [
-    {
-      "id": "0",
-      "name": "Idle",
-      "startFrameIndex": 0,
-      "endFrameIndex": 5,
-      "speed": 1
-    }
-  ],
+  "animations": [],
   "mapSlots": {
     "map": "map",
     "light": null,

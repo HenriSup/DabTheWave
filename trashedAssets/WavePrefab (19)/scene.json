@@ -1,0 +1,79 @@
+{
+  "formatVersion": 1,
+  "nodes": [
+    {
+      "id": "0",
+      "name": "Wave",
+      "children": [],
+      "components": [
+        {
+          "type": "SpriteRenderer",
+          "config": {
+            "formatVersion": 1,
+            "spriteAssetId": "16",
+            "animationId": "4",
+            "horizontalFlip": false,
+            "verticalFlip": false,
+            "castShadow": false,
+            "receiveShadow": false,
+            "color": "ffffff",
+            "overrideOpacity": true,
+            "opacity": 0.63,
+            "materialType": "basic",
+            "shaderAssetId": null
+          },
+          "id": "0"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "WaveBehavior",
+            "propertyValues": {}
+          },
+          "id": "2"
+        },
+        {
+          "type": "ArcadeBody2D",
+          "config": {
+            "formatVersion": 2,
+            "type": "box",
+            "movable": false,
+            "width": 350,
+            "height": 120,
+            "offset": {
+              "x": 0,
+              "y": 0
+            },
+            "bounce": {
+              "x": 0,
+              "y": 0
+            },
+            "tileMapAssetId": null,
+            "tileSetPropertyName": null,
+            "layersIndex": null
+          },
+          "id": "4"
+        }
+      ],
+      "position": {
+        "x": 900,
+        "y": 900,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    }
+  ]
+}

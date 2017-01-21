@@ -4,7 +4,12 @@
       "scriptId": "6",
       "line": 0,
       "parentBehavior": null,
-      "properties": []
+      "properties": [
+        {
+          "name": "activateDebugging",
+          "type": "boolean"
+        }
+      ]
     },
     "HitBoxBehavior": {
       "scriptId": "15",
@@ -20,6 +25,39 @@
           "type": "Sup.Math.Vector2"
         }
       ]
+    },
+    "WaveBehavior": {
+      "scriptId": "20",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "waveType",
+          "type": "number"
+        },
+        {
+          "name": "hasCalledForNewWave",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WaveGeneratorBehavior": {
+      "scriptId": "21",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "GameManagerBehavior": {
+      "scriptId": "22",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "CameraBehavior": {
+      "scriptId": "24",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }

@@ -5,11 +5,13 @@ class BoatBehavior extends Sup.Behavior {
   private debuggerTextRenderer2:Sup.TextRenderer
   private frameCounter:number
   private hitBoxesActor:Sup.Actor[]
+  public activateDebugging:boolean
   
   
   awake() {
+    Sup.log(this.actor.getChild("HitBoxes"));
     this.hitBoxesActor = this.actor.getChild("HitBoxes").getChildren()
-    this.frameCounter = 0 ;
+    this.frameCounter = 0;
     let boatX = this.actor.getLocalX()
     let boatY = this.actor.getLocalY()
       
@@ -22,15 +24,27 @@ class BoatBehavior extends Sup.Behavior {
     let boatVelocity = this.actor.cannonBody.body.velocity
     let boatPosition = this.actor.getPosition()
     
-    boatVelocity.y -= (10+(Math.sin(this.frameCounter/20)*5));
-    this.debuggerTextRenderer1.setText("vel\nx:"+boatVelocity.x.toPrecision(3)+"\ny:"+boatVelocity.y.toPrecision(3))
-    this.debuggerTextRenderer2.setText("pos\nx:"+boatPosition.x.toPrecision(3)+"\ny:"+boatPosition.y.toPrecision(3))
-    this.debuggerTextRenderer2.setText("pos\nx:"+boatPosition.x.toPrecision(3)+"\ny:"+boatPosition.y.toPrecision(3))
-    this.actor.cannonBody.body.velocity=new CANNON.Vec3(boatVelocity.x,boatVelocity.y,0);
+    
+    
+    boatVelocity.y -= (10+(Math.sin(this.frameCounter/20)*2));
+    
+    
+  
+    this.actor.cannonBody.body.velocity = new CANNON.Vec3(boatVelocity.x,boatVelocity.y,0);
     //this.actor.rotateLocalEulerZ(10);
     this.moveHitBoxes();
     this.applyFloatPhysic()
     this.frameCounter+=1
+    
+    
+    if (this.activateDebugging){
+      this.debuggerTextRenderer1.setText("vel\nx:"+boatVelocity.x.toPrecision(3)+"\ny:"+boatVelocity.y.toPrecision(3))
+      this.debuggerTextRenderer2.setText("pos\nx:"+boatPosition.x.toPrecision(3)+"\ny:"+boatPosition.y.toPrecision(3))
+    }  
+    else {
+      this.debuggerTextRenderer1.setText("")
+      this.debuggerTextRenderer2.setText("")
+    }
   }
   
   moveHitBoxes(){
@@ -45,7 +59,7 @@ class BoatBehavior extends Sup.Behavior {
     let blueHitBoxTriggered = this.hitBoxesActor[2].getBehavior(HitBoxBehavior).triggered;
     
     if(redHitBoxTriggered){
-      boatVelocity.y += 20;
+      boatVelocity.y += 30;
       this.actor.cannonBody.body.linearDamping=0.8;
     }
     else if (orangeHitBoxTriggered){
@@ -57,6 +71,8 @@ class BoatBehavior extends Sup.Behavior {
     
     this.actor.cannonBody.body.velocity=new CANNON.Vec3(boatVelocity.x,boatVelocity.y,0);
   }
+  
+ 
   
 }
 Sup.registerBehavior(BoatBehavior);

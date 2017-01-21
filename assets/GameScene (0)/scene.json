@@ -2,6 +2,202 @@
   "formatVersion": 1,
   "nodes": [
     {
+      "id": "20",
+      "name": "GameManager",
+      "children": [],
+      "components": [
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "GameManagerBehavior",
+            "propertyValues": {}
+          },
+          "id": "0"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    },
+    {
+      "id": "14",
+      "name": "WaveGenerator",
+      "children": [],
+      "components": [
+        {
+          "type": "SpriteRenderer",
+          "config": {
+            "formatVersion": 1,
+            "spriteAssetId": "17",
+            "animationId": null,
+            "horizontalFlip": false,
+            "verticalFlip": false,
+            "castShadow": false,
+            "receiveShadow": false,
+            "color": "ffffff",
+            "overrideOpacity": false,
+            "opacity": null,
+            "materialType": "basic",
+            "shaderAssetId": null
+          },
+          "id": "0"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "WaveGeneratorBehavior",
+            "propertyValues": {}
+          },
+          "id": "2"
+        }
+      ],
+      "position": {
+        "x": 1440,
+        "y": -444,
+        "z": 2
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    },
+    {
+      "id": "18",
+      "name": "WaveDeTest",
+      "children": [],
+      "components": [
+        {
+          "type": "SpriteRenderer",
+          "config": {
+            "formatVersion": 1,
+            "spriteAssetId": "16",
+            "animationId": "4",
+            "horizontalFlip": false,
+            "verticalFlip": false,
+            "castShadow": false,
+            "receiveShadow": false,
+            "color": "ffffff",
+            "overrideOpacity": false,
+            "opacity": null,
+            "materialType": "basic",
+            "shaderAssetId": null
+          },
+          "id": "0"
+        },
+        {
+          "type": "ArcadeBody2D",
+          "config": {
+            "formatVersion": 2,
+            "type": "box",
+            "movable": true,
+            "width": 320,
+            "height": 150,
+            "offset": {
+              "x": 0,
+              "y": -170
+            },
+            "bounce": {
+              "x": 0,
+              "y": 0
+            },
+            "tileMapAssetId": null,
+            "tileSetPropertyName": null,
+            "layersIndex": null
+          },
+          "id": "1"
+        }
+      ],
+      "position": {
+        "x": 1120,
+        "y": 0,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    },
+    {
+      "id": "19",
+      "name": "WaveDeTest",
+      "children": [],
+      "components": [
+        {
+          "type": "SpriteRenderer",
+          "config": {
+            "formatVersion": 1,
+            "spriteAssetId": "16",
+            "animationId": "3",
+            "horizontalFlip": false,
+            "verticalFlip": false,
+            "castShadow": false,
+            "receiveShadow": false,
+            "color": "ffffff",
+            "overrideOpacity": false,
+            "opacity": null,
+            "materialType": "basic",
+            "shaderAssetId": null
+          },
+          "id": "0"
+        }
+      ],
+      "position": {
+        "x": 1440,
+        "y": 0,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    },
+    {
       "id": "0",
       "name": "Background",
       "children": [
@@ -17,7 +213,7 @@
                 "type": "box",
                 "movable": true,
                 "width": 2000,
-                "height": 600,
+                "height": 150,
                 "offset": {
                   "x": 0,
                   "y": 0
@@ -35,7 +231,7 @@
           ],
           "position": {
             "x": 0,
-            "y": -482,
+            "y": -612,
             "z": 0
           },
           "orientation": {
@@ -97,13 +293,102 @@
     {
       "id": "1",
       "name": "Waves",
-      "children": [],
+      "children": [
+        {
+          "id": "11",
+          "name": "WaveTest",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "formatVersion": 1,
+                "spriteAssetId": null,
+                "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "12",
+          "name": "WaveTest",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "formatVersion": 1,
+                "spriteAssetId": null,
+                "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 64,
+            "y": 0,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        }
+      ],
       "components": [
         {
           "type": "SpriteRenderer",
           "config": {
             "formatVersion": 1,
-            "spriteAssetId": "4",
+            "spriteAssetId": null,
             "animationId": null,
             "horizontalFlip": false,
             "verticalFlip": false,
@@ -119,9 +404,9 @@
         }
       ],
       "position": {
-        "x": 0,
+        "x": 9,
         "y": 0,
-        "z": 2
+        "z": 1
       },
       "orientation": {
         "x": 0,
@@ -237,7 +522,7 @@
                   "type": "SpriteRenderer",
                   "config": {
                     "formatVersion": 1,
-                    "spriteAssetId": "12",
+                    "spriteAssetId": null,
                     "animationId": null,
                     "horizontalFlip": false,
                     "verticalFlip": false,
@@ -326,7 +611,7 @@
                   "type": "SpriteRenderer",
                   "config": {
                     "formatVersion": 1,
-                    "spriteAssetId": "11",
+                    "spriteAssetId": null,
                     "animationId": null,
                     "horizontalFlip": false,
                     "verticalFlip": false,
@@ -415,7 +700,7 @@
                   "type": "SpriteRenderer",
                   "config": {
                     "formatVersion": 1,
-                    "spriteAssetId": "10",
+                    "spriteAssetId": null,
                     "animationId": null,
                     "horizontalFlip": false,
                     "verticalFlip": false,
@@ -499,8 +784,8 @@
           "components": [],
           "position": {
             "x": 0,
-            "y": -135.563,
-            "z": 0
+            "y": -350,
+            "z": 1
           },
           "orientation": {
             "x": 0,
@@ -571,14 +856,19 @@
           "type": "Behavior",
           "config": {
             "behaviorName": "BoatBehavior",
-            "propertyValues": {}
+            "propertyValues": {
+              "activateDebugging": {
+                "type": "boolean",
+                "value": true
+              }
+            }
           },
           "id": "3"
         }
       ],
       "position": {
         "x": 0,
-        "y": 241.50711059570312,
+        "y": 250,
         "z": 1
       },
       "orientation": {
