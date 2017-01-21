@@ -6,6 +6,7 @@ class CameraBehavior extends Sup.Behavior {
 
   update() {
     
+    //this.actor.setPosition()
   }
 }
 Sup.registerBehavior(CameraBehavior);
