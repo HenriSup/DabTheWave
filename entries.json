@@ -1,4 +1,93 @@
 {
-  "nextEntryId": 0,
-  "nodes": []
+  "nextEntryId": 16,
+  "nodes": [
+    {
+      "id": "0",
+      "name": "Game",
+      "type": "scene"
+    },
+    {
+      "id": "7",
+      "name": "Fonts",
+      "type": null,
+      "children": [
+        {
+          "id": "8",
+          "name": "Font",
+          "type": "font"
+        },
+        {
+          "id": "13",
+          "name": "Font2",
+          "type": "font"
+        },
+        {
+          "id": "14",
+          "name": "Font4",
+          "type": "font"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Scripts",
+      "type": null,
+      "children": [
+        {
+          "id": "6",
+          "name": "BoatBehavior",
+          "type": "script"
+        },
+        {
+          "id": "15",
+          "name": "HitBoxBehavior",
+          "type": "script"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Sprites",
+      "type": null,
+      "children": [
+        {
+          "id": "1",
+          "name": "Boat",
+          "type": "sprite"
+        },
+        {
+          "id": "3",
+          "name": "Background",
+          "type": "sprite"
+        },
+        {
+          "id": "4",
+          "name": "Waves",
+          "type": "sprite"
+        },
+        {
+          "id": "9",
+          "name": "HitBox",
+          "type": null,
+          "children": [
+            {
+              "id": "10",
+              "name": "HitBoxBlue",
+              "type": "sprite"
+            },
+            {
+              "id": "11",
+              "name": "HitBoxOrange",
+              "type": "sprite"
+            },
+            {
+              "id": "12",
+              "name": "HitBoxRed",
+              "type": "sprite"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

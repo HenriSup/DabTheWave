@@ -1,3 +1,25 @@
 {
-  "behaviors": {}
+  "behaviors": {
+    "BoatBehavior": {
+      "scriptId": "6",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "HitBoxBehavior": {
+      "scriptId": "15",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "triggered",
+          "type": "boolean"
+        },
+        {
+          "name": "hitBoxOriginLocation",
+          "type": "Sup.Math.Vector2"
+        }
+      ]
+    }
+  }
 }
