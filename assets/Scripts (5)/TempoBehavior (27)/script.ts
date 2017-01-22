@@ -1,7 +1,7 @@
 class TempoBehavior extends Sup.Behavior {
   private frameCounter:number=0
   private timer:number=0
-  private beatCounter:number=0
+  public beatCounter:number=0
   private beatPerSec:number=2.05
   private oldBeat:number=-1
   private isPlayerTurn:boolean=false
@@ -54,7 +54,7 @@ class TempoBehavior extends Sup.Behavior {
   checkForTolerance(){
     if (this.beatToleranceFrameCounter<=this.beatToleranceMaxFrame){
       this.beatTolerance=true
-      Sup.getActor("TestBeatTolerance").spriteRenderer.setAnimation("Green")
+      //Sup.getActor("TestBeatTolerance").spriteRenderer.setAnimation("Green")
       var move:string = Sup.getActor("GameManager").getBehavior(GameManagerBehavior).getMoves()[Sup.getActor("GameManager").getBehavior(GameManagerBehavior).getMoves().length-(3-this.beatCounter%4)-1]
       Sup.log(move)
       if((Sup.Input.wasKeyJustPressed("LEFT") && move == "left" || Sup.Input.wasKeyJustPressed("RIGHT") && move == "right") && !this.lastNoteWasDone){
@@ -68,7 +68,7 @@ class TempoBehavior extends Sup.Behavior {
     }
     else {
       this.beatTolerance=false
-      Sup.getActor("TestBeatTolerance").spriteRenderer.setAnimation("Red")
+      //Sup.getActor("TestBeatTolerance").spriteRenderer.setAnimation("Red")
       
     }
     this.beatToleranceFrameCounter+=1
@@ -81,6 +81,7 @@ class TempoBehavior extends Sup.Behavior {
     successIndicator.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,this.actor.getPosition().z+1)
     Sup.getActor("GameManager").getBehavior(GameManagerBehavior).tellPiratesToDab(move)
     this.lastNoteWasDone=true
+    Sup.getActor("GameManager").getBehavior(GameManagerBehavior).killHighWave(this.beatCounter%4)
   }
   failDab(){
     //Faire pop un fail

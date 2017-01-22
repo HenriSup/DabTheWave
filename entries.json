@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 59,
+  "nextEntryId": 63,
   "nodes": [
     {
       "id": "0",
@@ -66,6 +66,11 @@
         {
           "id": "55",
           "name": "SuccessIndicator",
+          "type": "scene"
+        },
+        {
+          "id": "60",
+          "name": "HighWavePrefab",
           "type": "scene"
         }
       ]
@@ -155,6 +160,11 @@
         {
           "id": "57",
           "name": "SuccessIndicatorBehavior",
+          "type": "script"
+        },
+        {
+          "id": "62",
+          "name": "HighWaveBehavior",
           "type": "script"
         }
       ]
@@ -283,6 +293,11 @@
         {
           "id": "58",
           "name": "TextParrot",
+          "type": "sprite"
+        },
+        {
+          "id": "59",
+          "name": "HighWave",
           "type": "sprite"
         }
       ]

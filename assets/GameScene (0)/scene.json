@@ -36,94 +36,6 @@
       "prefab": null
     },
     {
-      "id": "33",
-      "name": "Acteur",
-      "children": [],
-      "components": [
-        {
-          "type": "SpriteRenderer",
-          "config": {
-            "formatVersion": 1,
-            "spriteAssetId": "56",
-            "animationId": "",
-            "horizontalFlip": false,
-            "verticalFlip": false,
-            "castShadow": false,
-            "receiveShadow": false,
-            "color": "ffffff",
-            "overrideOpacity": false,
-            "opacity": null,
-            "materialType": "basic",
-            "shaderAssetId": null
-          },
-          "id": "0"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": 0,
-        "z": 10
-      },
-      "orientation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "scale": {
-        "x": 1,
-        "y": 1,
-        "z": 1
-      },
-      "visible": true,
-      "layer": 0,
-      "prefab": null
-    },
-    {
-      "id": "32",
-      "name": "TestBeatTolerance",
-      "children": [],
-      "components": [
-        {
-          "type": "SpriteRenderer",
-          "config": {
-            "formatVersion": 1,
-            "spriteAssetId": "54",
-            "animationId": "0",
-            "horizontalFlip": false,
-            "verticalFlip": false,
-            "castShadow": false,
-            "receiveShadow": false,
-            "color": "ffffff",
-            "overrideOpacity": false,
-            "opacity": null,
-            "materialType": "basic",
-            "shaderAssetId": null
-          },
-          "id": "0"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": 0,
-        "z": 3
-      },
-      "orientation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "scale": {
-        "x": 1,
-        "y": 1,
-        "z": 1
-      },
-      "visible": true,
-      "layer": 0,
-      "prefab": null
-    },
-    {
       "id": "20",
       "name": "GameManager",
       "children": [],
@@ -210,16 +122,16 @@
       "prefab": null
     },
     {
-      "id": "18",
-      "name": "WaveDeTest",
+      "id": "34",
+      "name": "RightHighWaveGenerator",
       "children": [],
       "components": [
         {
           "type": "SpriteRenderer",
           "config": {
             "formatVersion": 1,
-            "spriteAssetId": "16",
-            "animationId": "4",
+            "spriteAssetId": "17",
+            "animationId": null,
             "horizontalFlip": false,
             "verticalFlip": false,
             "castShadow": false,
@@ -231,33 +143,11 @@
             "shaderAssetId": null
           },
           "id": "0"
-        },
-        {
-          "type": "ArcadeBody2D",
-          "config": {
-            "formatVersion": 2,
-            "type": "box",
-            "movable": true,
-            "width": 320,
-            "height": 150,
-            "offset": {
-              "x": 0,
-              "y": -170
-            },
-            "bounce": {
-              "x": 0,
-              "y": 0
-            },
-            "tileMapAssetId": null,
-            "tileSetPropertyName": null,
-            "layersIndex": null
-          },
-          "id": "1"
         }
       ],
       "position": {
-        "x": 1120,
-        "y": 0,
+        "x": 1440,
+        "y": -70,
         "z": 0
       },
       "orientation": {
@@ -269,6 +159,100 @@
       "scale": {
         "x": 1,
         "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    },
+    {
+      "id": "35",
+      "name": "LeftHighWaveGenerator",
+      "children": [],
+      "components": [
+        {
+          "type": "SpriteRenderer",
+          "config": {
+            "formatVersion": 1,
+            "spriteAssetId": "17",
+            "animationId": null,
+            "horizontalFlip": false,
+            "verticalFlip": false,
+            "castShadow": false,
+            "receiveShadow": false,
+            "color": "ffffff",
+            "overrideOpacity": false,
+            "opacity": null,
+            "materialType": "basic",
+            "shaderAssetId": null
+          },
+          "id": "0"
+        }
+      ],
+      "position": {
+        "x": -1440,
+        "y": -70,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    },
+    {
+      "id": "18",
+      "name": "RightWaveStopper",
+      "children": [],
+      "components": [],
+      "position": {
+        "x": 500,
+        "y": 160,
+        "z": 1
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 3,
+        "y": 3,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    },
+    {
+      "id": "36",
+      "name": "LeftWaveStopper",
+      "children": [],
+      "components": [],
+      "position": {
+        "x": -500,
+        "y": 160,
+        "z": 1
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 3,
+        "y": 3,
         "z": 1
       },
       "visible": true,
@@ -608,8 +592,8 @@
                 "verticalAlignment": "bottom",
                 "size": null,
                 "color": "ff0080",
-                "overrideOpacity": false,
-                "opacity": null
+                "overrideOpacity": true,
+                "opacity": 0
               },
               "id": "0"
             }
@@ -649,8 +633,8 @@
                 "verticalAlignment": "bottom",
                 "size": 31,
                 "color": "ff0080",
-                "overrideOpacity": false,
-                "opacity": null
+                "overrideOpacity": true,
+                "opacity": 0
               },
               "id": "0"
             }
@@ -696,7 +680,7 @@
                     "receiveShadow": false,
                     "color": "ffffff",
                     "overrideOpacity": true,
-                    "opacity": 0.39,
+                    "opacity": 0,
                     "materialType": "basic",
                     "shaderAssetId": null
                   },
@@ -734,8 +718,8 @@
                     "verticalAlignment": "center",
                     "size": null,
                     "color": "f3ff1e",
-                    "overrideOpacity": false,
-                    "opacity": null
+                    "overrideOpacity": true,
+                    "opacity": 0
                   },
                   "id": "2"
                 },
@@ -823,8 +807,8 @@
                     "verticalAlignment": "center",
                     "size": null,
                     "color": "f9e888",
-                    "overrideOpacity": false,
-                    "opacity": null
+                    "overrideOpacity": true,
+                    "opacity": 0
                   },
                   "id": "2"
                 },
@@ -912,8 +896,8 @@
                     "verticalAlignment": "center",
                     "size": null,
                     "color": "f2f906",
-                    "overrideOpacity": false,
-                    "opacity": null
+                    "overrideOpacity": true,
+                    "opacity": 0
                   },
                   "id": "2"
                 },

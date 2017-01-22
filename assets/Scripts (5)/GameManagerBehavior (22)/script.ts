@@ -1,11 +1,13 @@
 class GameManagerBehavior extends Sup.Behavior {
   private waves:WaveBehavior[]
+  private highWaves:HighWaveBehavior[]
   private pirates:PirateBehavior[]
   public incomingMoves:string[]
   
   awake() {
     this.incomingMoves = new Array<string>()
     this.waves = new Array<WaveBehavior>()
+    this.highWaves = new Array<HighWaveBehavior>()
     this.pirates = new Array<PirateBehavior>()
   }
 
@@ -25,6 +27,19 @@ class GameManagerBehavior extends Sup.Behavior {
   
   public addWave(newWave:WaveBehavior){
     this.waves.push(newWave)
+  }
+  public addHighWave(newHighWave:HighWaveBehavior){
+    this.highWaves.push(newHighWave)
+  }
+  public killHighWave(beatNumber:number){
+        
+//         var highWave = this.highWaves[beatNumber]
+        
+//         highWave.beatNumber==beatNumber
+//         highWave.gotKilled()
+//         this.highWaves.splice(0)
+      
+    
   }
   
   public deleteWave(waveToDelete:WaveBehavior){

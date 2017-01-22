@@ -44,6 +44,10 @@ class ParrotBehavior extends Sup.Behavior {
       newText.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,this.actor.getPosition().z)
       newText.getBehavior(ParrotTextBehavior).setMove("left")
       this.actor.spriteRenderer.setHorizontalFlip(true)
+      var newHighWave = Sup.appendScene("Prefabs/HighWavePrefab")[0];
+      newHighWave.setPosition(Sup.getActor("LeftHighWaveGenerator").getPosition())
+      newHighWave.getBehavior(HighWaveBehavior).setIsFacingRight(true)
+      newHighWave.getBehavior(HighWaveBehavior).beatNumber=Sup.getActor("Tempo").getBehavior(TempoBehavior).beatCounter%4
     }
     else {
       this.rightSound[this.rightShouldPlayOn].setVolume(0.3);
@@ -58,6 +62,10 @@ class ParrotBehavior extends Sup.Behavior {
       newText.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,this.actor.getPosition().z)
       newText.getBehavior(ParrotTextBehavior).setMove("right")
       this.actor.spriteRenderer.setHorizontalFlip(false)
+      var newHighWave = Sup.appendScene("Prefabs/HighWavePrefab")[0];
+      newHighWave.setPosition(Sup.getActor("RightHighWaveGenerator").getPosition())
+      newHighWave.getBehavior(HighWaveBehavior).setIsFacingRight(false)
+      newHighWave.getBehavior(HighWaveBehavior).beatNumber=Sup.getActor("Tempo").getBehavior(TempoBehavior).beatCounter%4
     }
    
   }

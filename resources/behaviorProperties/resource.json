@@ -63,7 +63,12 @@
       "scriptId": "27",
       "line": 0,
       "parentBehavior": null,
-      "properties": []
+      "properties": [
+        {
+          "name": "beatCounter",
+          "type": "number"
+        }
+      ]
     },
     "RythmBorderBehavior": {
       "scriptId": "31",
@@ -94,6 +99,41 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "HighWaveBehavior": {
+      "scriptId": "62",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "isFacingRight",
+          "type": "boolean"
+        },
+        {
+          "name": "beatNumber",
+          "type": "number"
+        },
+        {
+          "name": "shouldDie",
+          "type": "boolean"
+        },
+        {
+          "name": "stopTime",
+          "type": "number"
+        },
+        {
+          "name": "stopTimer",
+          "type": "number"
+        },
+        {
+          "name": "speed",
+          "type": "number"
+        },
+        {
+          "name": "shouldStop",
+          "type": "boolean"
+        }
+      ]
     }
   }
 }

@@ -19,8 +19,6 @@ class ParrotTextBehavior extends Sup.Behavior {
     this.makeVisible()
   }
   
-  
-  
   makeVisible(){
     this.actor.spriteRenderer.setOpacity(1)
   }
@@ -30,7 +28,6 @@ class ParrotTextBehavior extends Sup.Behavior {
     var higher = 2;
     var x = (Math.random() * (higher-lower)) + lower;
     var y = (Math.random() * (higher-lower)) + lower;
-    Sup.log(x +" "+ y)
     this.actor.setPosition(this.actor.getPosition().x+x,this.actor.getPosition().y+y,this.actor.getPosition().z)
   }
 }
