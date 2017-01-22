@@ -6,9 +6,11 @@ class BoatBehavior extends Sup.Behavior {
   private frameCounter:number
   private hitBoxesActor:Sup.Actor[]
   public activateDebugging:boolean
+  private lastPosY:number
   
   
   awake() {
+    this.lastPosY = this.actor.getPosition().y
     this.hitBoxesActor = this.actor.getChild("HitBoxes").getChildren()
     this.frameCounter = 0;
     let boatX = this.actor.getLocalX()
@@ -22,13 +24,7 @@ class BoatBehavior extends Sup.Behavior {
   update() {
     let boatVelocity = this.actor.cannonBody.body.velocity
     let boatPosition = this.actor.getPosition()
-    
-    
-    
     boatVelocity.y -= (10+(Math.sin(this.frameCounter/20)*2));
-    
-    
-  
     this.actor.cannonBody.body.velocity = new CANNON.Vec3(boatVelocity.x,boatVelocity.y,0);
     //this.actor.rotateLocalEulerZ(10);
     this.moveHitBoxes();
@@ -56,7 +52,7 @@ class BoatBehavior extends Sup.Behavior {
     let redHitBoxTriggered = this.hitBoxesActor[0].getBehavior(HitBoxBehavior).triggered;
     let orangeHitBoxTriggered = this.hitBoxesActor[1].getBehavior(HitBoxBehavior).triggered;
     let blueHitBoxTriggered = this.hitBoxesActor[2].getBehavior(HitBoxBehavior).triggered;
-    
+ 
     if(redHitBoxTriggered){
       boatVelocity.y += 30;
       this.actor.cannonBody.body.linearDamping=0.8;
