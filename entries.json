@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 49,
+  "nextEntryId": 54,
   "nodes": [
     {
       "id": "0",
@@ -12,13 +12,33 @@
       "type": null,
       "children": [
         {
-          "id": "26",
-          "name": "DrumSound",
+          "id": "46",
+          "name": "track0",
           "type": "sound"
         },
         {
-          "id": "46",
-          "name": "BeatSound",
+          "id": "51",
+          "name": "track1",
+          "type": "sound"
+        },
+        {
+          "id": "52",
+          "name": "track2",
+          "type": "sound"
+        },
+        {
+          "id": "53",
+          "name": "track3",
+          "type": "sound"
+        },
+        {
+          "id": "49",
+          "name": "ParrotLeft",
+          "type": "sound"
+        },
+        {
+          "id": "50",
+          "name": "ParrotRight",
           "type": "sound"
         }
       ]
