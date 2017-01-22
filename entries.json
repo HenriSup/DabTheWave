@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 54,
+  "nextEntryId": 55,
   "nodes": [
     {
       "id": "0",
@@ -180,6 +180,21 @@
           "type": "sprite"
         },
         {
+          "id": "36",
+          "name": "Parrot",
+          "type": "sprite"
+        },
+        {
+          "id": "39",
+          "name": "Telescope",
+          "type": "sprite"
+        },
+        {
+          "id": "54",
+          "name": "testCircle",
+          "type": "sprite"
+        },
+        {
           "id": "9",
           "name": "HitBox",
           "type": null,
@@ -249,16 +264,6 @@
               "type": "sprite"
             }
           ]
-        },
-        {
-          "id": "36",
-          "name": "Parrot",
-          "type": "sprite"
-        },
-        {
-          "id": "39",
-          "name": "Telescope",
-          "type": "sprite"
         }
       ]
     }

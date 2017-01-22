@@ -6,32 +6,32 @@
   "filtering": "pixelated",
   "wrapping": "clampToEdge",
   "pixelsPerUnit": 1,
-  "framesPerSecond": 1,
+  "framesPerSecond": 10,
   "opacity": null,
   "alphaTest": 0.1,
   "frameOrder": "rows",
   "grid": {
-    "width": 84,
-    "height": 68
+    "width": 320,
+    "height": 320
   },
   "origin": {
-    "x": 0.45,
+    "x": 0.5,
     "y": 0.5
   },
   "animations": [
     {
       "id": "0",
-      "name": "Idle",
+      "name": "Red",
       "startFrameIndex": 0,
-      "endFrameIndex": 8,
-      "speed": 9
+      "endFrameIndex": 0,
+      "speed": 1
     },
     {
       "id": "1",
-      "name": "DabCall",
-      "startFrameIndex": 10,
-      "endFrameIndex": 13,
-      "speed": 14
+      "name": "Green",
+      "startFrameIndex": 1,
+      "endFrameIndex": 1,
+      "speed": 1
     }
   ],
   "mapSlots": {
