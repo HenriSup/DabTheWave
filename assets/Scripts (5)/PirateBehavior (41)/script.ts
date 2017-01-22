@@ -18,8 +18,14 @@ class PirateBehavior extends Sup.Behavior {
     }
   }
   
-  public callDab(){
+  public callDab(move:string){
     this.shouldDab = true
+    if (move=="left"){
+      this.actor.spriteRenderer.setHorizontalFlip(true)
+    }
+    else {
+      this.actor.spriteRenderer.setHorizontalFlip(false)
+    }
   }
   
   

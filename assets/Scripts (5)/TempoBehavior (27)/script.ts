@@ -7,9 +7,10 @@ class TempoBehavior extends Sup.Behavior {
   private isPlayerTurn:boolean=false
   private shouldPlayOn=0
   private beatTolerance:boolean=false
-  private beatToleranceFrameCounter:number=0
+  private beatToleranceFrameCounter:number=-10
   private beatToleranceMaxFrame:number=15
   private measureLeft=2;
+  private lastNoteWasDone=false
   private track0 = [new Sup.Audio.SoundPlayer("Sounds/track0", 0.8, { loop: false }),new Sup.Audio.SoundPlayer("Sounds/track0", 0.8, { loop: false })];
   private track1 = [new Sup.Audio.SoundPlayer("Sounds/track1", 0.8, { loop: false }),new Sup.Audio.SoundPlayer("Sounds/track1", 0.8, { loop: false })];
   private track2 = [new Sup.Audio.SoundPlayer("Sounds/track2", 0.8, { loop: false }),new Sup.Audio.SoundPlayer("Sounds/track2", 0.8, { loop: false })];
@@ -23,19 +24,21 @@ class TempoBehavior extends Sup.Behavior {
     this.updateFrameCounterAndTimerAndBeatCounter()
     this.checkForTolerance()
     if (this.beatJustChanged()){
+      this.lastNoteWasDone=false
+      //Sup.getActor("GameManager").getBehavior(GameManagerBehavior).removeFromIncomingMoves()
       if (this.isPlayerTurn){
-        this.beatToleranceFrameCounter=0
+        this.beatToleranceFrameCounter=-5
         var rythmBorder = Sup.appendScene("Prefabs/RythmBorder")[0]
         rythmBorder.getBehavior(RythmBorderBehavior).setIsPlayerBorder()
         rythmBorder.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,5)
-        Sup.getActor("GameManager").getBehavior(GameManagerBehavior).tellPiratesToDab()
+        
       }
       else {
         Sup.getActor("Parrot").getBehavior(ParrotBehavior).callDab()
         var rythmBorder = Sup.appendScene("Prefabs/RythmBorder")[0];
         rythmBorder.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,5)
       }
-      Sup.log(this.beatCounter%4 + " time: " + this.timer)
+      //Sup.log(this.beatCounter%4 + " time: " + this.timer)
       if(this.beatCounter%4==0){
         if (this.measureLeft<=0){
           this.playTrack3()
@@ -45,15 +48,22 @@ class TempoBehavior extends Sup.Behavior {
         this.swapTurn() 
       }
     }
-    if (Sup.Input.wasKeyJustPressed("U")){
-      this.successfulDab()
-    }
+    
   }
   
   checkForTolerance(){
     if (this.beatToleranceFrameCounter<=this.beatToleranceMaxFrame){
       this.beatTolerance=true
       Sup.getActor("TestBeatTolerance").spriteRenderer.setAnimation("Green")
+      var move:string = Sup.getActor("GameManager").getBehavior(GameManagerBehavior).getMoves()[Sup.getActor("GameManager").getBehavior(GameManagerBehavior).getMoves().length-(3-this.beatCounter%4)-1]
+      Sup.log(move)
+      if((Sup.Input.wasKeyJustPressed("LEFT") && move == "left" || Sup.Input.wasKeyJustPressed("RIGHT") && move == "right") && !this.lastNoteWasDone){
+        this.successfulDab(move)
+      } else {
+        if(Sup.Input.wasKeyJustPressed("LEFT") && move == "right" || Sup.Input.wasKeyJustPressed("RIGHT") && move == "left"){
+          this.failDab()
+        }
+      }
       
     }
     else {
@@ -64,13 +74,19 @@ class TempoBehavior extends Sup.Behavior {
     this.beatToleranceFrameCounter+=1
   }
   
-  successfulDab(){
+  successfulDab(move:string){
     //Faire pop un nice
     var successIndicator = Sup.appendScene("Prefabs/SuccessIndicator")[0];
+    successIndicator.spriteRenderer.setAnimation("Success")
     successIndicator.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,this.actor.getPosition().z+1)
+    Sup.getActor("GameManager").getBehavior(GameManagerBehavior).tellPiratesToDab(move)
+    this.lastNoteWasDone=true
   }
   failDab(){
     //Faire pop un fail
+    var successIndicator = Sup.appendScene("Prefabs/SuccessIndicator")[0];
+    
+    successIndicator.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,this.actor.getPosition().z+1)
   }
   
   swapTurn(){

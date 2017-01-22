@@ -10,7 +10,7 @@ class GameManagerBehavior extends Sup.Behavior {
   }
 
   update() {
-    Sup.log(this.incomingMoves)
+    //Sup.log(this.incomingMoves)
   }
   
   public addIncomingMove(newMove:string){
@@ -18,6 +18,9 @@ class GameManagerBehavior extends Sup.Behavior {
   }
   public removeFromIncomingMoves(){
     this.incomingMoves.shift()
+  }
+  public getMoves():string[]{
+    return this.incomingMoves
   }
   
   public addWave(newWave:WaveBehavior){
@@ -44,8 +47,8 @@ class GameManagerBehavior extends Sup.Behavior {
     return this.pirates
   }
   
-  public tellPiratesToDab():void{
-    this.pirates.forEach(function(pirate){pirate.actor.getBehavior(PirateBehavior).callDab()});
+  public tellPiratesToDab(move:string):void{
+    this.pirates.forEach(function(pirate){pirate.actor.getBehavior(PirateBehavior).callDab(move)});
   }
   
 }
