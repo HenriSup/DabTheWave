@@ -1,9 +1,9 @@
 class ParrotTextBehavior extends Sup.Behavior {
   
   private timeAlive:number = 0
-  private lifeTime:number = 60*0.25
+  private lifeTime:number = 60*0.5
   awake() {
-    this.actor.textRenderer.setOpacity(0)
+    this.actor.spriteRenderer.setOpacity(0)
   }
   
   update() {
@@ -14,23 +14,24 @@ class ParrotTextBehavior extends Sup.Behavior {
     this.shake()
   }
   
-  public setText(newText:string){
-    this.actor.textRenderer.setText(newText)
+  public setMove(move:string){
+    this.actor.spriteRenderer.setAnimation(move)
     this.makeVisible()
   }
   
   
   
   makeVisible(){
-    this.actor.textRenderer.setOpacity(1)
+    this.actor.spriteRenderer.setOpacity(1)
   }
   
   shake() {
-    var lower = -1;
-    var higher = 1;
+    var lower = -2;
+    var higher = 2;
     var x = (Math.random() * (higher-lower)) + lower;
     var y = (Math.random() * (higher-lower)) + lower;
-    this.actor.setLocalPosition(this.actor.getLocalPosition().x,this.actor.getLocalPosition().y,this.actor.getLocalPosition().z)
+    Sup.log(x +" "+ y)
+    this.actor.setPosition(this.actor.getPosition().x+x,this.actor.getPosition().y+y,this.actor.getPosition().z)
   }
 }
 Sup.registerBehavior(ParrotTextBehavior);

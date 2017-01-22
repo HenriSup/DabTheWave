@@ -7,19 +7,30 @@
       "children": [],
       "components": [
         {
-          "type": "TextRenderer",
+          "type": "SpriteRenderer",
           "config": {
-            "formatVersion": 2,
-            "fontAssetId": "14",
-            "text": "DAB\nLEFT!",
-            "alignment": "center",
-            "verticalAlignment": "center",
-            "size": null,
-            "color": "f3a016",
+            "formatVersion": 1,
+            "spriteAssetId": "58",
+            "animationId": "0",
+            "horizontalFlip": false,
+            "verticalFlip": false,
+            "castShadow": false,
+            "receiveShadow": false,
+            "color": "ffffff",
             "overrideOpacity": false,
-            "opacity": null
+            "opacity": null,
+            "materialType": "basic",
+            "shaderAssetId": null
           },
-          "id": "0"
+          "id": "1"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "ParrotTextBehavior",
+            "propertyValues": {}
+          },
+          "id": "2"
         }
       ],
       "position": {

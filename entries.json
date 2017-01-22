@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 58,
+  "nextEntryId": 59,
   "nodes": [
     {
       "id": "0",
@@ -278,6 +278,11 @@
         {
           "id": "56",
           "name": "SuccessIndicator",
+          "type": "sprite"
+        },
+        {
+          "id": "58",
+          "name": "TextParrot",
           "type": "sprite"
         }
       ]

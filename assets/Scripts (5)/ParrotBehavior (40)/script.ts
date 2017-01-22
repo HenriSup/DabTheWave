@@ -40,6 +40,10 @@ class ParrotBehavior extends Sup.Behavior {
         this.leftShouldPlayOn=0;
       }
       Sup.getActor("GameManager").getBehavior(GameManagerBehavior).addIncomingMove("left")
+      var newText = Sup.appendScene("Prefabs/ParrotTextPrefab")[0];
+      newText.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,this.actor.getPosition().z)
+      newText.getBehavior(ParrotTextBehavior).setMove("left")
+      this.actor.spriteRenderer.setHorizontalFlip(true)
     }
     else {
       this.rightSound[this.rightShouldPlayOn].setVolume(0.3);
@@ -50,6 +54,10 @@ class ParrotBehavior extends Sup.Behavior {
         this.rightShouldPlayOn=0;
       }
       Sup.getActor("GameManager").getBehavior(GameManagerBehavior).addIncomingMove("right")
+      var newText = Sup.appendScene("Prefabs/ParrotTextPrefab")[0];
+      newText.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,this.actor.getPosition().z)
+      newText.getBehavior(ParrotTextBehavior).setMove("right")
+      this.actor.spriteRenderer.setHorizontalFlip(false)
     }
    
   }
