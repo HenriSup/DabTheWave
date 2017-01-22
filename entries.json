@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 55,
+  "nextEntryId": 58,
   "nodes": [
     {
       "id": "0",
@@ -61,6 +61,11 @@
         {
           "id": "34",
           "name": "ParrotTextPrefab",
+          "type": "scene"
+        },
+        {
+          "id": "55",
+          "name": "SuccessIndicator",
           "type": "scene"
         }
       ]
@@ -145,6 +150,11 @@
         {
           "id": "41",
           "name": "PirateBehavior",
+          "type": "script"
+        },
+        {
+          "id": "57",
+          "name": "SuccessIndicatorBehavior",
           "type": "script"
         }
       ]
@@ -264,6 +274,11 @@
               "type": "sprite"
             }
           ]
+        },
+        {
+          "id": "56",
+          "name": "SuccessIndicator",
+          "type": "sprite"
         }
       ]
     }

@@ -88,6 +88,12 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "SuccessIndicatorBehavior": {
+      "scriptId": "57",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }

@@ -29,7 +29,6 @@ class TempoBehavior extends Sup.Behavior {
         rythmBorder.getBehavior(RythmBorderBehavior).setIsPlayerBorder()
         rythmBorder.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,5)
         Sup.getActor("GameManager").getBehavior(GameManagerBehavior).tellPiratesToDab()
-        //Sup.getActor("Pirates").spriteRenderer.setAnimation("Dab",false)
       }
       else {
         Sup.getActor("Parrot").getBehavior(ParrotBehavior).callDab()
@@ -46,12 +45,16 @@ class TempoBehavior extends Sup.Behavior {
         this.swapTurn() 
       }
     }
+    if (Sup.Input.wasKeyJustPressed("U")){
+      this.successfulDab()
+    }
   }
   
   checkForTolerance(){
     if (this.beatToleranceFrameCounter<=this.beatToleranceMaxFrame){
       this.beatTolerance=true
       Sup.getActor("TestBeatTolerance").spriteRenderer.setAnimation("Green")
+      
     }
     else {
       this.beatTolerance=false
@@ -59,7 +62,15 @@ class TempoBehavior extends Sup.Behavior {
       
     }
     this.beatToleranceFrameCounter+=1
-    
+  }
+  
+  successfulDab(){
+    //Faire pop un nice
+    var successIndicator = Sup.appendScene("Prefabs/SuccessIndicator")[0];
+    successIndicator.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,this.actor.getPosition().z+1)
+  }
+  failDab(){
+    //Faire pop un fail
   }
   
   swapTurn(){

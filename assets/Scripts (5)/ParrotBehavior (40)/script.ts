@@ -30,6 +30,7 @@ class ParrotBehavior extends Sup.Behavior {
   
   public playSound(){
     var randomNumber = Math.random() >= 0.5
+    
     if (randomNumber) {
       this.leftSound[this.leftShouldPlayOn].setVolume(0.3);
       this.leftSound[this.leftShouldPlayOn].setPitch(0);
@@ -38,6 +39,7 @@ class ParrotBehavior extends Sup.Behavior {
       if (this.leftShouldPlayOn>=this.leftSound.length){
         this.leftShouldPlayOn=0;
       }
+      Sup.getActor("GameManager").getBehavior(GameManagerBehavior).addIncomingMove("left")
     }
     else {
       this.rightSound[this.rightShouldPlayOn].setVolume(0.3);
@@ -47,6 +49,7 @@ class ParrotBehavior extends Sup.Behavior {
       if (this.rightShouldPlayOn>=this.rightSound.length){
         this.rightShouldPlayOn=0;
       }
+      Sup.getActor("GameManager").getBehavior(GameManagerBehavior).addIncomingMove("right")
     }
    
   }

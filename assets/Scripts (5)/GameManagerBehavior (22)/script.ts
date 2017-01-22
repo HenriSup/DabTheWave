@@ -1,14 +1,23 @@
 class GameManagerBehavior extends Sup.Behavior {
   private waves:WaveBehavior[]
   private pirates:PirateBehavior[]
+  public incomingMoves:string[]
   
   awake() {
+    this.incomingMoves = new Array<string>()
     this.waves = new Array<WaveBehavior>()
     this.pirates = new Array<PirateBehavior>()
   }
 
   update() {
-    
+    Sup.log(this.incomingMoves)
+  }
+  
+  public addIncomingMove(newMove:string){
+    this.incomingMoves.push(newMove)
+  }
+  public removeFromIncomingMoves(){
+    this.incomingMoves.shift()
   }
   
   public addWave(newWave:WaveBehavior){
