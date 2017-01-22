@@ -26,12 +26,11 @@ class TempoBehavior extends Sup.Behavior {
         var rythmBorder = Sup.appendScene("Prefabs/RythmBorder")[0]
         rythmBorder.getBehavior(RythmBorderBehavior).setIsPlayerBorder()
         rythmBorder.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,5)
-        Sup.getActor("Pirates").spriteRenderer.setAnimation("Dab",false)
+        Sup.getActor("GameManager").getBehavior(GameManagerBehavior).tellPiratesToDab()
+        //Sup.getActor("Pirates").spriteRenderer.setAnimation("Dab",false)
       }
       else {
-        if (Sup.getActor("Pirates").spriteRenderer.getAnimation()=="Dab" && Sup.getActor("Pirates").spriteRenderer.getAnimationFrameIndex >= Sup.getActor("Pirates").spriteRenderer.getAnimationFrameCount){
-          if(Sup.getActor("Pirates").spriteRenderer.getAnimation()!="Idle"){Sup.getActor("Pirates").spriteRenderer.setAnimation("Idle",true)}
-        }
+        Sup.getActor("Parrot").getBehavior(ParrotBehavior).callDab()
         var rythmBorder = Sup.appendScene("Prefabs/RythmBorder")[0];
         rythmBorder.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,5)
       }

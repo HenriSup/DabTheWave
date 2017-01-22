@@ -70,6 +70,24 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "ParrotTextBehavior": {
+      "scriptId": "35",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "ParrotBehavior": {
+      "scriptId": "40",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "PirateBehavior": {
+      "scriptId": "41",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }

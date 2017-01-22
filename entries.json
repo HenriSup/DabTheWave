@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 34,
+  "nextEntryId": 46,
   "nodes": [
     {
       "id": "0",
@@ -31,6 +31,11 @@
         {
           "id": "30",
           "name": "RythmBorder",
+          "type": "scene"
+        },
+        {
+          "id": "34",
+          "name": "ParrotTextPrefab",
           "type": "scene"
         }
       ]
@@ -100,6 +105,21 @@
         {
           "id": "27",
           "name": "TempoBehavior",
+          "type": "script"
+        },
+        {
+          "id": "35",
+          "name": "ParrotTextBehavior",
+          "type": "script"
+        },
+        {
+          "id": "40",
+          "name": "ParrotBehavior",
+          "type": "script"
+        },
+        {
+          "id": "41",
+          "name": "PirateBehavior",
           "type": "script"
         }
       ]
@@ -177,8 +197,43 @@
               "id": "33",
               "name": "Pirate",
               "type": "sprite"
+            },
+            {
+              "id": "37",
+              "name": "Pirate2",
+              "type": "sprite"
+            },
+            {
+              "id": "42",
+              "name": "Pirate3",
+              "type": "sprite"
+            },
+            {
+              "id": "43",
+              "name": "Pirate4",
+              "type": "sprite"
+            },
+            {
+              "id": "44",
+              "name": "Pirate5",
+              "type": "sprite"
+            },
+            {
+              "id": "45",
+              "name": "Pirate6",
+              "type": "sprite"
             }
           ]
+        },
+        {
+          "id": "36",
+          "name": "Parrot",
+          "type": "sprite"
+        },
+        {
+          "id": "39",
+          "name": "Telescope",
+          "type": "sprite"
         }
       ]
     }

@@ -6,7 +6,7 @@
   "filtering": "pixelated",
   "wrapping": "clampToEdge",
   "pixelsPerUnit": 1,
-  "framesPerSecond": 12,
+  "framesPerSecond": 10,
   "opacity": null,
   "alphaTest": 0.1,
   "frameOrder": "rows",
@@ -30,7 +30,7 @@
       "id": "2",
       "name": "Dab",
       "startFrameIndex": 6,
-      "endFrameIndex": 11,
+      "endFrameIndex": 9,
       "speed": 1
     }
   ],
