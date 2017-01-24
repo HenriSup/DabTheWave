@@ -40,19 +40,16 @@ class GameManagerBehavior extends Sup.Behavior {
         if (firstInstantiatedTime==-2 || highwave.getTimeInstantiated() < firstInstantiatedTime){
           firstInstantiatedTime=highwave.getTimeInstantiated()
           firstHighWave=highwave
-          Sup.log("condition right remplies wave number")
         }
       }
       else if (dabSide=="left" && (Sup.getActor("LeftWaveStopper").getPosition().x-10>highwave.actor.getPosition().x || Sup.getActor("LeftWaveStopper").getPosition().x-10<highwave.actor.getPosition().x)&& !highwave.getShouldDie() && highwave.canBeKilled()){
         if (firstInstantiatedTime==-2 || highwave.getTimeInstantiated() < firstInstantiatedTime){
           firstInstantiatedTime=highwave.getTimeInstantiated()
           firstHighWave=highwave
-          Sup.log("condition left remplies")
         }
       }
     });
     if (firstHighWave!=null){
-      Sup.log("Tuer une wave")
       firstHighWave.gotKilled()
     }
   }

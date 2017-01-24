@@ -86,7 +86,6 @@ class HighWaveBehavior extends Sup.Behavior {
   
   public gotKilled(){
     this.shouldDie=true
-    Sup.log("meurt mechante vague")
   }
 }
 Sup.registerBehavior(HighWaveBehavior);

@@ -3,6 +3,7 @@ class TempoBehavior extends Sup.Behavior {
   private timer:number=0
   public beatCounter:number=0
   private beatPerSec:number=2.05
+  //2.05
   private oldBeat:number=-1
   private isPlayerTurn:boolean=false
   private shouldPlayOn=0
@@ -31,8 +32,6 @@ class TempoBehavior extends Sup.Behavior {
         var rythmBorder = Sup.appendScene("Prefabs/RythmBorder")[0]
         rythmBorder.getBehavior(RythmBorderBehavior).setIsPlayerBorder()
         rythmBorder.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,5)
-        
-        
       }
       else {
         Sup.getActor("Parrot").getBehavior(ParrotBehavior).callDab()
