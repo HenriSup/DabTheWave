@@ -46,7 +46,7 @@ class ParrotBehavior extends Sup.Behavior {
       this.actor.spriteRenderer.setHorizontalFlip(true)
       var newHighWave = Sup.appendScene("Prefabs/HighWavePrefab")[0];
       newHighWave.setPosition(Sup.getActor("LeftHighWaveGenerator").getPosition())
-      newHighWave.getBehavior(HighWaveBehavior).setIsFacingRight(true)
+      newHighWave.getBehavior(HighWaveBehavior).setIsGoingLeft(true)
       newHighWave.getBehavior(HighWaveBehavior).beatNumber=Sup.getActor("Tempo").getBehavior(TempoBehavior).beatCounter%4
     }
     else {
@@ -64,7 +64,7 @@ class ParrotBehavior extends Sup.Behavior {
       this.actor.spriteRenderer.setHorizontalFlip(false)
       var newHighWave = Sup.appendScene("Prefabs/HighWavePrefab")[0];
       newHighWave.setPosition(Sup.getActor("RightHighWaveGenerator").getPosition())
-      newHighWave.getBehavior(HighWaveBehavior).setIsFacingRight(false)
+      newHighWave.getBehavior(HighWaveBehavior).setIsGoingLeft(false)
       newHighWave.getBehavior(HighWaveBehavior).beatNumber=Sup.getActor("Tempo").getBehavior(TempoBehavior).beatCounter%4
     }
    

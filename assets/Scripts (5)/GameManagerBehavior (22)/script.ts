@@ -12,7 +12,8 @@ class GameManagerBehavior extends Sup.Behavior {
   }
 
   update() {
-    //Sup.log(this.incomingMoves)
+    //Sup.log(this.highWaves)
+    
   }
   
   public addIncomingMove(newMove:string){
@@ -31,15 +32,29 @@ class GameManagerBehavior extends Sup.Behavior {
   public addHighWave(newHighWave:HighWaveBehavior){
     this.highWaves.push(newHighWave)
   }
-  public killHighWave(beatNumber:number){
-        
-//         var highWave = this.highWaves[beatNumber]
-        
-//         highWave.beatNumber==beatNumber
-//         highWave.gotKilled()
-//         this.highWaves.splice(0)
-      
-    
+  public killHighWave(dabSide:string){
+    var firstInstantiatedTime = -2
+    var firstHighWave:HighWaveBehavior = null
+    this.highWaves.forEach(function(highwave){
+      if(dabSide=="right" && (Sup.getActor("RightWaveStopper").getPosition().x-10<highwave.actor.getPosition().x || Sup.getActor("RightWaveStopper").getPosition().x-10<highwave.actor.getPosition().x) && !highwave.getShouldDie() && highwave.canBeKilled() ) {
+        if (firstInstantiatedTime==-2 || highwave.getTimeInstantiated() < firstInstantiatedTime){
+          firstInstantiatedTime=highwave.getTimeInstantiated()
+          firstHighWave=highwave
+          Sup.log("condition right remplies wave number")
+        }
+      }
+      else if (dabSide=="left" && (Sup.getActor("LeftWaveStopper").getPosition().x-10>highwave.actor.getPosition().x || Sup.getActor("LeftWaveStopper").getPosition().x-10<highwave.actor.getPosition().x)&& !highwave.getShouldDie() && highwave.canBeKilled()){
+        if (firstInstantiatedTime==-2 || highwave.getTimeInstantiated() < firstInstantiatedTime){
+          firstInstantiatedTime=highwave.getTimeInstantiated()
+          firstHighWave=highwave
+          Sup.log("condition left remplies")
+        }
+      }
+    });
+    if (firstHighWave!=null){
+      Sup.log("Tuer une wave")
+      firstHighWave.gotKilled()
+    }
   }
   
   public deleteWave(waveToDelete:WaveBehavior){

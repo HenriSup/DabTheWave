@@ -7,8 +7,8 @@ class TempoBehavior extends Sup.Behavior {
   private isPlayerTurn:boolean=false
   private shouldPlayOn=0
   private beatTolerance:boolean=false
-  private beatToleranceFrameCounter:number=-10
-  private beatToleranceMaxFrame:number=15
+  private beatToleranceFrameCounter:number=-15
+  private beatToleranceMaxFrame:number=30
   private measureLeft=2;
   private lastNoteWasDone=false
   private track0 = [new Sup.Audio.SoundPlayer("Sounds/track0", 0.8, { loop: false }),new Sup.Audio.SoundPlayer("Sounds/track0", 0.8, { loop: false })];
@@ -56,7 +56,7 @@ class TempoBehavior extends Sup.Behavior {
       this.beatTolerance=true
       //Sup.getActor("TestBeatTolerance").spriteRenderer.setAnimation("Green")
       var move:string = Sup.getActor("GameManager").getBehavior(GameManagerBehavior).getMoves()[Sup.getActor("GameManager").getBehavior(GameManagerBehavior).getMoves().length-(3-this.beatCounter%4)-1]
-      Sup.log(move)
+      //Sup.log(move)
       if((Sup.Input.wasKeyJustPressed("LEFT") && move == "left" || Sup.Input.wasKeyJustPressed("RIGHT") && move == "right") && !this.lastNoteWasDone){
         this.successfulDab(move)
       } else {
@@ -81,7 +81,7 @@ class TempoBehavior extends Sup.Behavior {
     successIndicator.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,this.actor.getPosition().z+1)
     Sup.getActor("GameManager").getBehavior(GameManagerBehavior).tellPiratesToDab(move)
     this.lastNoteWasDone=true
-    Sup.getActor("GameManager").getBehavior(GameManagerBehavior).killHighWave(this.beatCounter%4)
+    Sup.getActor("GameManager").getBehavior(GameManagerBehavior).killHighWave(move)
   }
   failDab(){
     //Faire pop un fail
@@ -149,6 +149,10 @@ class TempoBehavior extends Sup.Behavior {
       this.oldBeat = this.beatCounter
     }
     return beatChanged
+  }
+  
+  public getTime():number{
+    return this.timer
   }
 }
 Sup.registerBehavior(TempoBehavior);

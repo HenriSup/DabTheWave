@@ -1,15 +1,17 @@
 class HighWaveBehavior extends Sup.Behavior {
-  isFacingRight:boolean=false
+  isGoingLeft:boolean=false
   beatNumber:number=0
   shouldDie=false
-  stopTime:number=70
+  stopTime:number=90
   stopTimer:number=0
   speed:number=20
-  
+  instantiatedTime:number
+  isAttacking:boolean = false
   shouldStop=false
   
   awake() {
     Sup.getActor("GameManager").getBehavior(GameManagerBehavior).addHighWave(this)
+    this.instantiatedTime = Sup.getActor("Tempo").getBehavior(TempoBehavior).getTime()
   }
 
   update() {
@@ -22,7 +24,7 @@ class HighWaveBehavior extends Sup.Behavior {
   }
   
   move(){
-    if(this.isFacingRight){
+    if(this.isGoingLeft){
       this.actor.setPosition(this.actor.getPosition().x+this.speed,this.actor.getPosition().y,this.actor.getPosition().z)
     } else {
       this.actor.setPosition(this.actor.getPosition().x-this.speed,this.actor.getPosition().y,this.actor.getPosition().z)
@@ -30,26 +32,29 @@ class HighWaveBehavior extends Sup.Behavior {
   }
   
   checkForStop(){
-    if(this.isFacingRight){
+    if(this.isGoingLeft){
       if(this.actor.getPosition().x>=Sup.getActor("LeftWaveStopper").getPosition().x){
+        //this.actor.setPosition(Sup.getActor("LeftWaveStopper").getPosition().x,this.actor.getPosition().y)
         this.stopTimer+=1
         this.shouldStop=true
       }
     } else {
       if(this.actor.getPosition().x<=Sup.getActor("RightWaveStopper").getPosition().x){
+        //this.actor.setPosition(Sup.getActor("RightWaveStopper").getPosition().x,this.actor.getPosition().y)
         this.stopTimer+=1
         this.shouldStop=true
       }
     }
-    if (this.stopTimer>=this.stopTime){
+    if (this.stopTimer>=this.stopTime ){
       this.speed=40
+      this.isAttacking=true
       this.shouldStop=false
       this.move()
     }
   }
   
   animate(){
-    this.actor.spriteRenderer.setHorizontalFlip(this.isFacingRight)
+    this.actor.spriteRenderer.setHorizontalFlip(this.isGoingLeft)
     if (!this.shouldDie && this.actor.spriteRenderer.getAnimation()!="Idle"){
       this.actor.spriteRenderer.setAnimation("Idle",true)
     }
@@ -59,17 +64,24 @@ class HighWaveBehavior extends Sup.Behavior {
         
   }
   
-  public setIsFacingRight(isFacingRight:boolean){
-    this.isFacingRight=isFacingRight
+  public setIsGoingLeft(goingLeft:boolean){
+    this.isGoingLeft=goingLeft
+  }
+  
+  public getTimeInstantiated(){
+    return this.instantiatedTime
   }
   
   deleteIfOutOfBound(){
-    // if (this.actor.getPosition().x<=-1300){
-    //   Sup.getActor("GameManager").getBehavior(GameManagerBehavior).killHighWave(this.beatNumber)
-    // }
-    // if (this.actor.getPosition().x<=-1600){
-    //   this.actor.destroy()
-    // }
+    //verifier le temps de vie et tuer si superieur à 10 sec
+  }
+  
+  public canBeKilled():boolean{
+    return !this.isAttacking 
+  }
+  
+  public getShouldDie():boolean{
+    return this.shouldDie
   }
   
   public gotKilled(){
