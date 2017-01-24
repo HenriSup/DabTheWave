@@ -32,13 +32,14 @@ class TempoBehavior extends Sup.Behavior {
         rythmBorder.getBehavior(RythmBorderBehavior).setIsPlayerBorder()
         rythmBorder.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,5)
         
+        
       }
       else {
         Sup.getActor("Parrot").getBehavior(ParrotBehavior).callDab()
         var rythmBorder = Sup.appendScene("Prefabs/RythmBorder")[0];
+        
         rythmBorder.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,5)
       }
-      //Sup.log(this.beatCounter%4 + " time: " + this.timer)
       if(this.beatCounter%4==0){
         if (this.measureLeft<=0){
           this.playTrack3()
@@ -75,7 +76,7 @@ class TempoBehavior extends Sup.Behavior {
   }
   
   successfulDab(move:string){
-    //Faire pop un nice
+    Sup.getActor("Camera").getBehavior(CameraBehavior).callZoom()
     var successIndicator = Sup.appendScene("Prefabs/SuccessIndicator")[0];
     successIndicator.spriteRenderer.setAnimation("Success")
     successIndicator.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,this.actor.getPosition().z+1)
@@ -84,7 +85,7 @@ class TempoBehavior extends Sup.Behavior {
     Sup.getActor("GameManager").getBehavior(GameManagerBehavior).killHighWave(move)
   }
   failDab(){
-    //Faire pop un fail
+
     var successIndicator = Sup.appendScene("Prefabs/SuccessIndicator")[0];
     
     successIndicator.setPosition(this.actor.getPosition().x,this.actor.getPosition().y,this.actor.getPosition().z+1)
@@ -142,13 +143,14 @@ class TempoBehavior extends Sup.Behavior {
     this.beatCounter=Math.round(this.timer/(1/this.beatPerSec));
   }
   
-  beatJustChanged():boolean{
+  public beatJustChanged():boolean{
     var beatChanged = false
     if (this.beatCounter>this.oldBeat){
       beatChanged = true
       this.oldBeat = this.beatCounter
     }
     return beatChanged
+    
   }
   
   public getTime():number{
